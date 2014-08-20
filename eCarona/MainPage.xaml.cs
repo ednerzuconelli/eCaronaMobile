@@ -37,12 +37,12 @@ namespace eCarona
             {
                 configuracao = new Configuracao 
                 {
-                    Endereco_servidor = "https://ecarona-c9-ednerzuconelli.c9.io/eCarona",
+                    Endereco_servidor = "https://ecarona-c9-andersonzanichelli.c9.io/eCarona",
                     Token = App.Token,
                 };
 
                 configuracao.Gravar();
-                App.Endereco_Servidor = "https://ecarona-c9-ednerzuconelli.c9.io/eCarona";
+                App.Endereco_Servidor = "https://ecarona-c9-andersonzanichelli.c9.io/eCarona";
             }
 
             NavigationService.Navigate(new Uri("/Cadastro.xaml", UriKind.Relative));
