@@ -161,6 +161,23 @@ namespace eCarona
                     tipo_carona = "0";
                 else
                     tipo_carona = "1";
+
+                String tipo_servico = "";
+                if (percursoRad_A.IsChecked == true)
+                {
+                    tipo_servico = "0";
+                }
+                else
+                {
+                    if (percursoRad_B.IsChecked == true)
+                    {
+                        tipo_servico = "1";
+                    }
+                    else
+                    {
+                        tipo_servico = "2";
+                    }
+                }
                        
                 var values = new List<KeyValuePair<string, string>>
                 {
@@ -176,7 +193,7 @@ namespace eCarona
                     new KeyValuePair<string, string>("tipoCarona", tipo_carona),
                     //new KeyValuePair<string, string>("tipoCarona", _pessoa.tipoCarona.ToString()),
                     new KeyValuePair<string, string>("vagasPendentes", _pessoa.vagasPendentes.ToString()),
-                    new KeyValuePair<string, string>("tipoServico", _pessoa.tipoServico.ToString()),
+                    new KeyValuePair<string, string>("tipoServico", tipo_servico),
                     //new KeyValuePair<string, string>("tipoServico", tipo_carona),
                     new KeyValuePair<string, string>("telefone", _pessoa.telefone),
                     new KeyValuePair<string, string>("token",App.Token)
