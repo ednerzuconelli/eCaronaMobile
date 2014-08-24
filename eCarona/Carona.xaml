@@ -59,9 +59,16 @@
                                 x:Name="btnDetalhes"
                                 BorderThickness="0"                                
                                 Margin="0"
-                                Content="Detalhes">
+                                Content="Detalhes" Click="btnDetalhes_Click">
                                 
-                            </Button>                           
+                            </Button>
+                            <TextBlock
+                                x:Name="tbToken"
+                                Text="{Binding token}"
+                                FontSize="{StaticResource PhoneFontSizeLarge}"
+                                Grid.Column="1"
+                                VerticalAlignment="Center" Foreground="#FFF5EDED" 
+                             />
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

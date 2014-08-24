@@ -28,6 +28,7 @@ namespace eCarona.Modelo
         public string telefone { get; set; }
         public string cidade { get; set; }
         public string uf { get; set; }
+        public string token { get; set; }
         public int tipoCarona
         {
             get;

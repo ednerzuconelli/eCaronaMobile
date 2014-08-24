@@ -21,6 +21,7 @@ namespace eCarona
         public static String Endereco_Servidor;
         public static String Token;
         public static Pessoa pessoa;
+        public static Pessoa pessoa_detalhe;
 
         /// <summary>
         /// Constructor for the Application object.

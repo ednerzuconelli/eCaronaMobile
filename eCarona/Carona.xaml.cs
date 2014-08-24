@@ -10,6 +10,8 @@ using Microsoft.Phone.Shell;
 using eCarona.Modelo;
 using Microsoft.Phone.Tasks;
 using Newtonsoft.Json;
+using System.IO;
+using System.Net.NetworkInformation;
 
 namespace eCarona
 {
@@ -107,6 +109,34 @@ namespace eCarona
                 objPessoas = JsonConvert.DeserializeObject<IList<Pessoa>>(e.Result);
                 toDoItemsListBox.ItemsSource = objPessoas;
             }
+        }
+
+        private void btnDetalhes_Click(object sender, RoutedEventArgs e)
+        {
+            var t = sender as Button;
+            if (t != null)
+            {
+                Pessoa pessoa = t.DataContext as Pessoa;
+
+                //Passar o token da pessoa numa url, pegar o jason e montar a lista
+                WebClient requisicao_pessoa = new WebClient();
+                Uri url = new Uri(App.Endereco_Servidor + "/pessoa/token=" + pessoa.token);
+                requisicao_pessoa.DownloadStringCompleted += requisicao_pessoa_DownloadStringCompleted2;
+                requisicao_pessoa.DownloadStringAsync(url);
+
+            }
+        }
+
+        private void requisicao_pessoa_DownloadStringCompleted2(object sender, DownloadStringCompletedEventArgs e)
+        {
+            if (e.Error != null || e.Result == null)
+                MessageBox.Show("Erro ao acessar a sua conta. Entrar em contato com o suporte tecnico!");
+            else
+            {
+                App.pessoa_detalhe = JsonConvert.DeserializeObject<Pessoa>(e.Result);
+                NavigationService.Navigate(new Uri("/Detalhes.xaml", UriKind.Relative));                
+            }
+
         }
     }
 }
