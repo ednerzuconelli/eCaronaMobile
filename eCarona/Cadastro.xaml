@@ -51,7 +51,7 @@
                 <RadioButton x:Name="rad_B" Content="Solicito" IsChecked="{Binding rad_TipoCaronaSolicito, Mode=TwoWay}" HorizontalAlignment="Left" Margin="206,530,0,0" VerticalAlignment="Top" GroupName="tipoCarona"/>
                 <TextBlock x:Name="tblPeriodo" HorizontalAlignment="Left" Margin="13,598,0,0" TextWrapping="Wrap" Text="Periodo:" VerticalAlignment="Top" FontSize="24"/>
                 <toolkit:DatePicker x:Name="tbDataInicial" Value="{Binding dataInicial, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="-2,625,0,0" Grid.Row="1" VerticalAlignment="Top" Width="187"/>
-                <TextBlock HorizontalAlignment="Left" Margin="206,645,0,0" Grid.Row="1" TextWrapping="Wrap" Text="A" VerticalAlignment="Top" FontSize="24"/>
+                 <TextBlock HorizontalAlignment="Left" Margin="206,645,0,0" Grid.Row="1" TextWrapping="Wrap" Text="A" VerticalAlignment="Top" FontSize="24"/>
                 <toolkit:DatePicker x:Name="tbDataFinal" Value="{Binding dataFinal, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="240,625,0,0" Grid.Row="1" VerticalAlignment="Top" Width="187"/>
                 <TextBlock x:Name="tblVagas" HorizontalAlignment="Left" Margin="10,695,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Vagas:" VerticalAlignment="Top" FontSize="24"/>
                 <TextBox x:Name="tbVagas" Text="{Binding vagasPendentes, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="-2,722,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" InputScope="Number" MaxLength="1" KeyDown="tbVagas_KeyDown"/>
